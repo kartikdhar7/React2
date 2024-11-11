@@ -1,13 +1,102 @@
+/* General Styling */
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+h1 {
+  color: #2c3e50;
+}
+
+h2 {
+  color: #34495e;
+}
+
+/* Action List Styling */
+.action-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.action-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.action-item button {
+  padding: 6px 12px;
+  border: none;
+  background-color: #27ae60;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.action-item button:hover {
+  background-color: #2ecc71;
+}
+
+/* Impact Summary Styling */
+.impact-summary {
+  margin-top: 20px;
+}
+
+.impact-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.summary-item {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.impact-summary button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.impact-summary button:hover {
+  background-color: #c0392b;
+}
+/* Individual Action Styling */
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.action button {
+  padding: 6px 12px;
+  border: none;
+  background-color: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.action button:hover {
+  background-color: #c0392b;
+}
+
