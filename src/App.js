@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import ActionList from './ActionList';
+import ImpactSummary from './ImpactSummary';
+import './index.css';
 
-function App() {
+const App = () => {
+  const [actions, setActions] = useState(() => {
+    const savedActions = localStorage.getItem('actions');
+    return savedActions ? JSON.parse(savedActions) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('actions', JSON.stringify(actions));
+  }, [actions]);
+
+  const addAction = (newAction) => {
+    setActions([...actions, newAction]);
+  };
+
+  const clearActions = () => {
+    setActions([]);
+  };
+
+  const removeAction = (id) => {
+    setActions(actions.filter((action) => action.id !== id));
+  };
+
+  const totalCO2Reduction = actions.reduce((total, action) => total + action.co2Reduction, 0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1>Eco Tracker</h1>
+      <ActionList addAction={addAction} />
+      <ImpactSummary actions={actions} totalCO2Reduction={totalCO2Reduction} clearActions={clearActions} removeAction={removeAction} />
     </div>
   );
-}
+};
 
 export default App;
